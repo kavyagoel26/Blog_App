@@ -1,5 +1,6 @@
 import { AppBar } from "../components/AppBar"
 import { BlogCard } from "../components/BlogCard"
+import { BlogSkeleton } from "../components/BlogSkelton";
 import { useBlogs } from "../hooks";
 
 
@@ -8,7 +9,11 @@ export const Blogs =() =>{
 
     if(loading){
         return <div>
-            loading ..... 
+         <AppBar/>
+         <div className="flex justify-center ">
+          <BlogSkeleton/>
+          <BlogSkeleton/>
+        </div>
         </div>
     }
     return<div>
