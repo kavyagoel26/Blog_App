@@ -105,7 +105,16 @@ try{
     const blog = await prisma.blog.findFirst({
         where: {
             id: id
-        },
+        },select:{
+            id: true,
+            title:true,
+            content:true,
+            author:{
+                select:{
+                    name: true
+                }
+            }
+        }
     })
     return c.json({
         blog
