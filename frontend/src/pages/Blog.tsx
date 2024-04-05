@@ -6,10 +6,10 @@ import { useBlog } from "../hooks";
 
 
 export const Blog =() =>{
-    const { id } = useParams();
+    useParams();
     const {loading, blog} = useBlog({id: "id" || ""});
     
-    if(loading){ 
+    if(loading  || !blog){ 
         return <><div>
             <AppBar />
         </div><div className="h-screen flex flex-col justify-center">
