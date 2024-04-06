@@ -6,8 +6,8 @@ import { useBlog } from "../hooks";
 
 
 export const Blog =() =>{
-    useParams();
-    const {loading, blog} = useBlog({id: "id" || ""});
+     const {id} =useParams();
+    const {loading, blog} = useBlog({id: id || ""});
     
     if(loading  || !blog){ 
         return <><div>
