@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 
 
-function Search({ onSearch }) { // Pass onSearch prop
+function Search() { // Pass onSearch prop
     const [searchQuery, setSearchQuery] = useState('');
   
-    const handleChange = (event) => {
+    const handleChange = (event: { target: { value: SetStateAction<string>; }; }) => {
       setSearchQuery(event.target.value);
     };
   
-    const handleSubmit = (event) => { // Handle submit for clarity
+    const handleSubmit = (event: { preventDefault: () => void; }) => { // Handle submit for clarity
       event.preventDefault();
-      onSearch(searchQuery); // Call onSearch prop function
+      ///onSearch(searchQuery); // Call onSearch prop function
     };
   
     return (
@@ -24,7 +24,7 @@ function Search({ onSearch }) { // Pass onSearch prop
     //     <button type="submit">Search</button>
     //   </form>
 
-<form className="max-w-md mx-auto">   
+<form className="max-w-md mx-auto "  onSubmit={handleSubmit}>   
 <label className ="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
 <div className="relative">
     <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">

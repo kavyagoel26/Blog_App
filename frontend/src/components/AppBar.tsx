@@ -2,6 +2,7 @@ import { Link} from "react-router-dom";
 import { Avatar } from "./BlogCard";
 import Search from "./Search";
 
+
 export const AppBar = () => {
   // const [filteredBlogs, setFilteredBlogs] = useState([]); // State for filtered results
   // const [allBlogs, setAllBlogs] = useState([]); // Assume you have blog data
