@@ -1,7 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { Avatar } from "./BlogCard";
+import Search from "./Search";
 
 export const AppBar = () => {
+  // const [filteredBlogs, setFilteredBlogs] = useState([]); // State for filtered results
+  // const [allBlogs, setAllBlogs] = useState([]); // Assume you have blog data
+
+  // const handleSearch = (query) => {
+  //   const filtered = allBlogs.filter((blog) =>
+  //     blog.title.toLowerCase().includes(query.toLowerCase())
+  //   );
+  //   setFilteredBlogs(filtered);
+  // };
+
   return (
     <div className=" border-b flex justify-between px-8 py-4">
       <div className="flex justify-center">
@@ -26,6 +37,7 @@ export const AppBar = () => {
           Blogify
         </Link>
       </div>
+ <Search/>
       <div className=" flex flex-row mr-6">
         <Link to={"/publish"}>
           <button
